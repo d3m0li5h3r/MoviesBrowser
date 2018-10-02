@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">MoviesBrowser</string>
+    <string name="app_name">Movies Browser</string>
+
+    <string name="error_message_something_went_wrong">Something went wrong. Please try again later.</string>
+    <string name="error_message_no_movies">No movies to display.</string>
 </resources>

@@ -4,6 +4,7 @@ import com.d3m0li5h3r.samples.moviesbrowser.api.models.DiscoverMovieResponse
 import com.d3m0li5h3r.samples.moviesbrowser.models.Movie
 import com.google.gson.GsonBuilder
 import io.reactivex.Observable
+import io.reactivex.Single
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -16,10 +17,10 @@ import java.util.concurrent.TimeUnit
 interface ApiService {
 
     @GET(value = ENDPOINT_DISCOVER_MOVIES)
-    fun getMovies(@Query(value = "page") pageNumber: Long): Observable<DiscoverMovieResponse>
+    fun getMovies(@Query(value = "page") pageNumber: Int = 1): Single<DiscoverMovieResponse>
 
     @GET(value = ENDPOINT_MOVIE_DETAILS)
-    fun getMovieDetails(@Path(value = "movie_id") movieId: Long): Observable<Movie>
+    fun getMovieDetails(@Path(value = "movie_id") movieId: Long): Single<Movie>
 
     class Factory {
         companion object {

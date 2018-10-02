@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.d3m0li5h3r.samples.moviesbrowser">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MoviesBrowserApplication"
         android:allowBackup="true"
@@ -10,5 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning" />
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+        <activity android:name=".view.movies.MovieListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
 </manifest>
